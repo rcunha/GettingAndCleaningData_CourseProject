@@ -1,5 +1,5 @@
 #Getting And Cleaning Data 
-##[Course Project][[https://class.coursera.org/getdata-012/human_grading/view/courses/973499/assessments/3/submissions]]
+##Course Project 
 *Roger Cunha*  
 *2015-03-20* 
 
