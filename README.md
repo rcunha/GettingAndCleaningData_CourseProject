@@ -1,12 +1,9 @@
-==========================================
-Getting And Cleaning Data 
-Course Project
-==========================================
+#Getting And Cleaning Data 
+##Course Project
 *Roger Cunha*  
 *2015-03-20* 
 
-The dataset includes the following files:
------------------------------------------
+###This project includes the following files: 
 
 - `README.md`
  
