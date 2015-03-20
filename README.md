@@ -1,8 +1,7 @@
 #Getting And Cleaning Data 
-##Course Project 
 *Roger Cunha*  
 *2015-03-20* 
-
+##Course Project 
 The purpose of this project is to demonstrate the ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. 
 
 ###This project includes the following files: 
