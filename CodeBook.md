@@ -40,7 +40,7 @@ dx <- select(dx, cols[,"cnum"])
 ```
 
 ### Appropriately label the data set with descriptive variable names. 
-Using the same structure used to select the columns to keep, now we assign their column names.
+Using the same structure used to select the columns to keep (cols), now we assign descriptive column names to dx.
 ```r
 # Appropriately label the data set with descriptive variable names. 
 colnames(dx) <- cols[,"cname"]
@@ -57,7 +57,7 @@ df <- cbind(s,dy,dx)
 ```
 
 ### Create a second, independent tidy data set with the average of each variable for each activity and each subject.
-First, the data set is molten by subject and activity, making all column names into values for new column "feature", and its measurement into the new column value. Then the molten data is grouped by subject, activity, and feature, and column "average" is assigned the mean of value.
+First, the data set is molten by subject and activity, making all column names into values for new column "feature", and its measurement into the new column value. Then the molten data is grouped by subject, activity, and feature, and column "average" is assigned the mean of value. Finally, the data is written to file "tidy_data_set.txt".
 ```r
 # Create a second, independent tidy data set with the average of each variable 
 # for each activity and each subject.
