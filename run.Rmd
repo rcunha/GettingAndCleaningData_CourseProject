@@ -23,6 +23,7 @@ setwd(folderDataset)
 ```
 
 ```{r}
+setwd(folderDataset)
 # Merge the training and the test sets to create one data set.
 dx_train<- read.table("train/X_train.txt")
 dx_test <- read.table("test/X_test.txt")

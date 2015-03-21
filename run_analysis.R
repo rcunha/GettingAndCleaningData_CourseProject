@@ -20,33 +20,33 @@ setwd(folderDataset)
 # Merge the training and the test sets to create one data set.
 dx_train<- read.table("train/X_train.txt")
 dx_test <- read.table("test/X_test.txt")
-dx <- rbind(dx_train, dx_test) # merge the measurements
+dx <- rbind(dx_train, dx_test) # list of all measurements
 dy_train<- read.table("train/y_train.txt", col.names=c("activity_id"))
 dy_test <- read.table("test/y_test.txt", col.names=c("activity_id"))
-dy <- rbind(dy_train, dy_test) # merge the activities
+dy <- rbind(dy_train, dy_test) # list of all measurements' activities ids
 s_train <- read.table("train/subject_train.txt", col.names=c("subject"))
 s_test <- read.table("test/subject_test.txt", col.names=c("subject"))
-s <- rbind(s_train, s_test) # merge the subjects
+s <- rbind(s_train, s_test) # list of all measurements' subjects 
 
 # Extract only the measurements on the mean and standard deviation for each measurement. 
 cols <- read.table("features.txt",col.names=c("cnum","cname"),stringsAsFactors=FALSE)
 cols <- filter(cols, str_detect(cname, fixed("mean()")) | str_detect(cname, fixed("std()")))
-dx <- select(dx, cols[,1])
+dx <- select(dx, cols[,"cnum"]) 
 
 # Appropriately label the data set with descriptive variable names. 
-colnames(dx) <- cols[,2]
+colnames(dx) <- cols[,"cname"]
 
 # Use descriptive activity names to name the activities in the data set
 act_names <- read.table("activity_labels.txt", col.names=c("activity_id", "activity"))
 dy <- dy %>% join(act_names, "activity_id") %>% select(-activity_id)
-df <- cbind(s,dy,dx)
+df <- cbind(s,dy,dx)  
 
 # Create a second, independent tidy data set with the average of each variable 
 # for each activity and each subject.
 tidydf <- df %>% 
-          gather(feature, measurement, -c(subject,activity)) %>% 
+          gather(feature, value, -c(subject,activity)) %>% 
           group_by(subject, activity, feature) %>%
-          summarise(average=mean(measurement))
+          summarise(average=mean(value))
 setwd("..")
 write.table(tidydf, "tidy_data_set.txt", row.name=FALSE)
 
