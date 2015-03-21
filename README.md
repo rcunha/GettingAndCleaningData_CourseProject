@@ -16,7 +16,7 @@ The purpose of this project is to demonstrate the ability to collect, work with,
  4. Appropriately labels the data set with descriptive variable names.  
  5. From the data set in the previous step, creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
-- `CodeBook.md`: describes the variables, the data, and transformations performed to clean up the data written to `tidy_data_set.txt`. 
+- `CodeBook.md`: describes the variables, the data, and transformations performed to clean up the data written to `tidy_data_set.txt` performed by script `run_analysis.R`. 
  
 - `tidy_data_set.txt`: tidy data set, created by script `run_analysis.R`. 
  
