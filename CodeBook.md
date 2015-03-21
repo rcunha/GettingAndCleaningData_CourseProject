@@ -14,6 +14,28 @@ This data set contains the average of each variable from the meain data set (onl
 
 ## Transformations
 
+### Load libraries. Download and unzip files if needed. Set the working directory.
+```r
+# The purpose of this project is to demonstrate the ability to collect, work with, and 
+# clean a data set. The goal is to prepare tidy data that can be used for later analysis. 
+
+library(dplyr)
+library(tidyr)
+library(stringr)
+
+# Set working directory. Download and unzip files if needed.
+folderDataset <- "./UCI HAR Dataset"
+if (!file.exists(folderDataset)){
+  zipFile <- "dataset.zip"
+  if (!file.exists(zipFile)){
+    fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+    download.file(fileUrl, zipFile, method="curl")
+  }
+  unzip("dataset.zip")
+}
+setwd(folderDataset)
+```
+
 ### Merge the training and the test sets to create one data set
 The original data is split into train and test forders. This part of the code concatenates the measurements, activity id, and subject lists from train and test folders. 
 dx, dy, and s end up with the total list of, respectively, measurements, activity id, and subject identifier
