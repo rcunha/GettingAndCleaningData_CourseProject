@@ -20,13 +20,13 @@ setwd(folderDataset)
 # Merge the training and the test sets to create one data set.
 dx_train<- read.table("train/X_train.txt")
 dx_test <- read.table("test/X_test.txt")
-dx <- rbind(dx_train, dx_test)
+dx <- rbind(dx_train, dx_test) # merge the measurements
 dy_train<- read.table("train/y_train.txt", col.names=c("activity_id"))
 dy_test <- read.table("test/y_test.txt", col.names=c("activity_id"))
-dy <- rbind(dy_train, dy_test)
+dy <- rbind(dy_train, dy_test) # merge the activities
 s_train <- read.table("train/subject_train.txt", col.names=c("subject"))
 s_test <- read.table("test/subject_test.txt", col.names=c("subject"))
-s <- rbind(s_train, s_test)
+s <- rbind(s_train, s_test) # merge the subjects
 
 # Extract only the measurements on the mean and standard deviation for each measurement. 
 cols <- read.table("features.txt",col.names=c("cnum","cname"),stringsAsFactors=FALSE)
