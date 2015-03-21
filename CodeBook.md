@@ -1,18 +1,15 @@
-# Code Book for data set `tidy_data_set.txt`  
+# Code Book 
 
-## Variables
-
+## Variables - file `tidy_data_set.txt`
 * `subject`: identifier of the subject who carried out the experiment, ranging from 1 to 30. 
 * `activity`: descriptive name of the measured activity performed by the subject. Possible values are (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
 * `feature`: name of the measured feature. Only the mean() and std() features were filtered for this data set. 
 * `average`: numeric average of each feature for each activity and each subject.
 
-
 ## Data
-
 This data set contains the average of each variable from the meain data set (only features for mean() and std()) for each activity and each subject.
 
-## Transformations
+## Transformations - script `run_analysis.R`
 
 ### Load libraries. Download and unzip files if needed. Set the working directory.
 ```r
